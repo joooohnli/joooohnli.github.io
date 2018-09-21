@@ -5,7 +5,7 @@ date:   2018-09-21 14:42:49 +0800
 categories: timer callback
 ---
 
-# [源码](https://github.com/joooohnli/delay-callback)
+[源码](https://github.com/joooohnli/delay-callback)
 
 # 一、背景
 业务需要延时执行一段逻辑，比如注册会员成功3小时自动开通发言权限、下单之7天内未支付自动关闭订单。
