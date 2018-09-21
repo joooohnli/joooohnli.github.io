@@ -2,7 +2,7 @@
 layout: post
 title:  "分布式定时回调服务"
 date:   2018-09-21 14:42:49 +0800
-categories: callback 回调 timer 分布式 dubbo redis 定时
+categories: timer callback
 ---
 
 [源码](https://github.com/joooohnli/delay-callback)
