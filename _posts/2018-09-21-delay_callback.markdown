@@ -188,5 +188,39 @@ public class DelayCallbackServiceImpl implements DelayCallbackService, DelayCall
     private int maxInterval = MAX_INTERVAL_DEFAULT;
 ```
 
+# 六、注意事项
+### 1.接入要求
+回调通过dubbo接口，需要保证应用已开启dubbo端口。
+### 2.使用限制
+使用方式与本地java回调基本一致，除了一个限制：以匿名内部类方式实现的回调，方法体中禁止包含外部方法的局部变量。   错误示例：   
+```
+    public void wrongUsage() {
+        // 局部变量
+        String hello = "world";
+        RegisterResult register = DelayCallbackHelper.register(new CallbackParam(new ArrayList<>(), 10), new DelayCallback() {
+            @Override
+            public String alias() {
+                return Constants.ALIAS_2;
+            }
+
+            @Override
+            public boolean onCallback(CallbackRequest request) {
+                // 错：使用了 外部方法 的 局部变量
+                System.out.println(hello);
+
+                return true;
+            }
+        });
+
+    }
+```
+  若错误使用，应用启动时会抛异常且中断：
+  
+```
+2018-08-30 11:54:26.335 ERROR 18485 --- [           main] o.s.boot.SpringApplication               : Application startup failed
+
+com.john.callback.CallbackException: Callback init error,reason:Anonymous inner class implementation of DelayCallback can not include local variables of external method,class:class provider.test.callback.DelayCallbackTest$2
+
+```
 
 
