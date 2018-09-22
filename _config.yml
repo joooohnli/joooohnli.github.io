@@ -16,7 +16,6 @@
 title: 囧酱
 email: joooohnli@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  john's simple life~
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://joooohn.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: joooohnli
