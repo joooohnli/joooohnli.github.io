@@ -54,3 +54,8 @@ defaults:
       path:            "baidu*"
     values:
       sitemap:         false
+  -
+    scope:
+      path:            "BingSite*"
+    values:
+      sitemap:         false
