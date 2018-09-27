@@ -6,7 +6,7 @@ categories: timer callback
 ---
 
  
-![A distributed, reliable timer / timed callback service, based on dubbo & redis.](https://favicon.yandex.net/favicon/github.com)[View on GitHub](https://github.com/joooohnli/delay-callback)
+![A distributed timer, distributed callback service, based on dubbo & redis.](https://favicon.yandex.net/favicon/github.com)[View on GitHub](https://github.com/joooohnli/delay-callback)
 
 # 一、背景
 业务需要延时执行一段逻辑，比如注册会员成功3小时自动开通发言权限、下单之7天内未支付自动关闭订单。
